@@ -1,4 +1,7 @@
-import {useFlipper} from '@react-navigation/devtools';
+import {
+  useFlipper,
+  useReduxDevToolsExtension,
+} from '@react-navigation/devtools';
 import {
   NavigationContainer,
   useNavigationContainerRef,
@@ -9,6 +12,7 @@ import {AppStack} from './App/screens/AppStack';
 const App = () => {
   const navigationRef = useNavigationContainerRef();
   useFlipper(navigationRef);
+  useReduxDevToolsExtension(navigationRef);
 
   return (
     <NavigationContainer ref={navigationRef}>
