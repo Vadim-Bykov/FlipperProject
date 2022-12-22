@@ -9,8 +9,11 @@ import {
 import React from 'react';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {Provider} from 'react-redux';
+import {configureAxios} from './App/api/axiosConfig';
 import {AppStack} from './App/screens/AppStack';
 import {appStore} from './App/store';
+
+configureAxios();
 
 const queryClient = new QueryClient();
 

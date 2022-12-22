@@ -3,11 +3,19 @@ import React from 'react';
 import {MainStackProps} from '../MainStackNavigationType';
 import {useAppDispatch} from '../../../../store';
 import {updateAuthData} from '../../../../store/auth/actions';
+import {usePost, usePosts, useTodos} from '../../../../api/jsonplaceholder';
 
 export const MoreScreen: React.FC<MainStackProps<'MoreScreen'>> = ({
   navigation: {navigate},
 }) => {
   const dispatch = useAppDispatch();
+  const {data: posts} = usePosts();
+  const {data: post} = usePost({
+    postNumber: 1,
+    queryOptions: {onSuccess: () => console.log('Ok')},
+  });
+  const {data: todos} = useTodos();
+  console.log({post});
 
   return (
     <View style={styles.container}>
