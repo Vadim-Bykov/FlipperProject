@@ -7,7 +7,9 @@ import {
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import React from 'react';
+import {Provider} from 'react-redux';
 import {AppStack} from './App/screens/AppStack';
+import {appStore} from './App/store';
 
 const App = () => {
   const navigationRef = useNavigationContainerRef();
@@ -15,9 +17,11 @@ const App = () => {
   useReduxDevToolsExtension(navigationRef);
 
   return (
-    <NavigationContainer ref={navigationRef}>
-      <AppStack />
-    </NavigationContainer>
+    <Provider store={appStore}>
+      <NavigationContainer ref={navigationRef}>
+        <AppStack />
+      </NavigationContainer>
+    </Provider>
   );
 };
 
