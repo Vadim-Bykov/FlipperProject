@@ -3,9 +3,6 @@ import {QueryKey, useQuery, UseQueryOptions} from 'react-query';
 
 const instance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
-  params: {
-    api_key: 'a72c9cd11375413053bccd6b3e6aaefe',
-  },
 });
 
 interface Todo {
@@ -22,17 +19,20 @@ interface Post {
   userId: number;
 }
 
-const getData = (queryKey: string) =>
-  instance.get(queryKey).then(response => response.data);
+const getData = (url: string) =>
+  instance.get(url).then(response => response.data);
 
 export const useTodos = () => useQuery<Todo[]>('todos', () => getData('todos'));
 export const usePosts = () => useQuery<Post[]>('posts', () => getData('posts'));
 
-interface UsePostParams {
+interface UseTodoParams {
   postNumber: number;
   queryOptions?: UseQueryOptions<Todo, AxiosError, Todo, QueryKey>;
 }
-export const usePost = ({postNumber, queryOptions = {}}: UsePostParams) =>
+export const useTodoDetails = ({
+  postNumber,
+  queryOptions = {},
+}: UseTodoParams) =>
   useQuery({
     queryKey: ['todos', postNumber],
     queryFn: () => getData(`todos/${postNumber}`),
