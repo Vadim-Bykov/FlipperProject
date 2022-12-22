@@ -9,6 +9,14 @@ export const HomeScreen: React.FC<MainStackProps<'HomeScreen'>> = ({
     <View style={styles.container}>
       <Text>HomeScreen</Text>
       <Button title="Go to MoreScreen" onPress={() => navigate('MoreScreen')} />
+      <Button
+        title="Go to TodosScreen"
+        onPress={() => navigate('TodosScreen')}
+      />
+      <Button
+        title="Go to PostsScreen"
+        onPress={() => navigate('PostsScreen')}
+      />
     </View>
   );
 };
