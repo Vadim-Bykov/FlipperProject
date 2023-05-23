@@ -1347,6 +1347,11 @@
     color "^4.2.3"
     warn-once "^0.1.0"
 
+"@rnx-kit/align-deps@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.npmjs.org/@rnx-kit/align-deps/-/align-deps-2.2.2.tgz"
+  integrity sha512-OEt5q4QnvOK7Kv7nGVN4JLxBof347e31Vir241qxvUs8jUGbNqS4qdaW9L45v5R1dbLQc/OBLSxyqq5caFgn7Q==
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.npmjs.org/@sideway/address/-/address-4.1.4.tgz"
